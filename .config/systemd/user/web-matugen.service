@@ -1,0 +1,10 @@
+[Unit]
+Description=Local CSS Server
+
+[Service]
+WorkingDirectory=%h/.config/web
+ExecStart=/usr/bin/python -m http.server 8765
+Restart=always
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,18 @@
+theme = Matugen
+font-family = JetBrainsMono Nerd Font
+font-style = Medium
+window-padding-x = 12
+window-padding-y = 10
+window-padding-balance = true
+
+copy-on-select = clipboard
+clipboard-read = allow
+clipboard-write = allow
+
+# Move between splits
+keybind = ctrl+alt+h=goto_split:left
+keybind = ctrl+alt+l=goto_split:right
+keybind = ctrl+alt+k=goto_split:top
+keybind = ctrl+alt+j=goto_split:bottom
+
+confirm-close-surface = false

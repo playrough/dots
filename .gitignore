@@ -1,0 +1,71 @@
+# Matugen generated
+.config/waybar/colors.css
+.config/swaync/colors.css
+.config/kitty/colors.conf
+.config/ghostty/themes/Matugen
+.config/hypr/colors.lua
+.config/rofi/matugen/
+.config/btop/themes/matugen.theme
+.config/qt5ct/colors/matugen.conf
+.config/qt6ct/colors/matugen.conf
+.config/gtk-3.0/gtk.css
+.config/gtk-4.0/gtk.css
+.config/zathura/matugen-zathurarc
+.cache/wal/colors.json
+.config/yazi/theme.toml
+.config/yazi/yazi.toml
+.config/yazi/plugins/
+.config/yazi/package.toml
+.config/nvim/colors.json
+.config/web/colors.css
+.config/tridactyl/themes/colors.css
+.config/cava/config
+.config/librewolf/chrome/colors.css
+
+.config/nvim/nvim-pack-lock.json 
+.config/nwg-look/
+.config/pulse/
+.config/pywalfox/
+.config/librewolf/librewolf/
+.config/ibus/
+.config/gtk-4.0/assets/
+.config/gtk-4.0/assets/*
+.config/gtk-4.0/assets
+.config/go/
+.config/fcitx/
+.config/fcitx5/
+.config/dconf/
+.config/cava/
+.config/Thunar/
+.config/xsettingsd/*
+.config/xfce4/*
+
+**/*.wants/
+
+# ===== CACHE =====
+.cache/
+*.swp
+*.bak
+*.tmp
+
+# ===== ZSH plugins (IMPORTANT) =====
+.config/zsh/plugins/*
+
+# ===== RUNTIME / STATE =====
+.lesshst
+.viminfo
+.bash_history
+
+# ===== DEV ENV =====
+.npm/
+.cargo/
+
+# ===== SSH / GNUPG =====
+.ssh/
+.gnupg/
+
+# ===== BROWSER STATE =====
+.mozilla/
+
+# ===== LOCAL STUFF =====
+.local/

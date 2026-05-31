@@ -1,0 +1,131 @@
+
+/* ---- Configuration ---- */
+configuration {
+    modi:                       "drun";
+    show-icons:                 true;
+    drun-display-format:        "{name}";
+    hover-select:               true;
+    me-select-entry:            "MouseSecondary";
+    me-accept-entry:            "MousePrimary";
+
+}
+
+/* ---- Global properties ---- */ 
+@import "~/.config/rofi/applets/shared/colors.rasi"
+@import "~/.config/rofi/applets/shared/fonts.rasi"
+
+/* ---- Window ---- */
+window {
+    enabled:                     true;
+    fullscreen:                  false;
+    transparency:                "real";
+    cursor:                      "default";
+    border-radius:               10px;
+    border-color:                transparent;
+    background-color:            transparent;
+    width:                       420px;
+}
+
+/* ---- Mainbox ---- */
+mainbox {
+    enabled:                     true;
+    children:                    [ "inputbar", "listview" ];
+    background-color:            @background;
+}
+
+
+inputbar {
+    enabled: true;
+    padding: 12px 16px;
+    border-radius: 0px;
+    background-color: transparent;
+    children: [  "entry" ];
+    spacing: 8px;
+}
+
+
+prompt {
+    enabled: true;
+    text: "";
+    font: "JetBrainsMono Nerd Font 14";
+    text-color: @foreground;
+}
+
+
+entry {
+    enabled: true;
+    placeholder: "Choose color ...";
+    placeholder-color: @foreground;
+    background-color: transparent;
+    text-color: @foreground;
+    cursor: text;
+}
+
+/* ---- Listview ---- */
+listview {
+    enabled:                     true;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  @foreground;
+    fixed-height:                false;
+    spacing:                     4px;
+    padding:                     4px;
+}
+
+/* ---- Element ---- */
+element {
+    enabled:                     true;
+    orientation:                 horizontal;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    border-radius:               4px;
+}
+
+element selected.normal {
+    background-color:            @selected;
+    text-color:                  @selected-text;
+    // border-radius:               0px;
+}
+
+element-icon {
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+element-text {
+    font:                        "JetBrainsMono Nerd Font Mono 16";
+    enabled:                     true;
+    padding:                     0px;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+/*****----- Message -----*****/
+message {
+    background-color:            transparent;
+    border:                      0px;
+    margin:                      20px 0px 0px 0px;
+    padding:                     0px;
+    spacing:                     0px;
+    border-radius:               10px;
+}
+
+textbox {
+    padding:                     15px;
+    margin:                      0px;
+    border-radius:               0px;
+    background-color:            @background;
+    text-color:                  @foreground;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+error-message {
+    padding:                     15px;
+    border-radius:               20px;
+    background-color:            @background;
+    text-color:                  @foreground;
+}
