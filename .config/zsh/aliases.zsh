@@ -40,34 +40,15 @@ alias nv='nvim'
 # Git
 # =========================================================
 
-alias glog='PAGER="less -F -X" git log'                              # -F quit if one screen, -X no clear on exit
-alias gadog='PAGER="less -F -X" git log --all --decorate --oneline --graph'
-
+alias gs='git status -sb'
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push'
+alias gd='git diff'
+alias gl='git log --oneline --graph --decorate'auto
 
 # =========================================================
 # Paru
 # =========================================================
 
 alias p='paru'
-
-# =========================================================
-# DOTFILES
-# =========================================================
-
-dot() {
-  git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" "$@"
-}
-
-alias ds='dot status'
-alias da='dot add'
-alias dc='dot commit'
-alias dp='dot push'
-alias dl='dot log --oneline --graph --decorate'
-alias dd='dot diff'
-
-
-# =========================================================
-# Glow
-# =========================================================
-
-alias glow="glow --style=$HOME/.config/glow/glow-style.json"

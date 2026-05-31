@@ -118,5 +118,5 @@ torrent() {
       return 1
   }
 
-aria2c -d ~/Downloads/aria/ "$magnet"
+  aria2c -d ~/Downloads/aria/ "$magnet"
 }
