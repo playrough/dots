@@ -45,7 +45,7 @@ alias ga='git add'
 alias gc='git commit -m'
 alias gp='git push'
 alias gd='git diff'
-alias gl='git log --oneline --graph --decorate'auto
+alias gl='git log --oneline --graph --decorate'
 
 # =========================================================
 # Paru
