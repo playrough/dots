@@ -39,6 +39,7 @@
 .config/Thunar/
 .config/xsettingsd/*
 .config/xfce4/*
+.config/rofi/images/
 
 **/*.wants/
 
