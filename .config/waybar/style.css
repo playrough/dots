@@ -10,14 +10,18 @@
 
 /* ===================== BAR ===================== */
 window#waybar {
-  background: alpha(@background, 0.8);
+  background: transparent;
   color: alpha(@on_surface, 0.8);
   transition: background-color 0.5s;
   font-size: 12px;
-  box-shadow:
-    0 2px 4px alpha(black, 0.15),
-    0 8px 16px alpha(black, 0.2),
-    0 16px 32px alpha(black, 0.35);
+}
+
+#waybar > box {
+  margin: 0px 0px 3px 0px;
+  background-color: alpha(@background, 0.7);
+  box-shadow: 0 0 2 2 rgba(0, 0, 0, 0.6);
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
 /* ===================== MODULE CONTAINERS ===================== */
