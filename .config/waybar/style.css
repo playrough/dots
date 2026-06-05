@@ -118,6 +118,10 @@ window#waybar {
   transition: all 0.3s;
 }
 
+#workspaces button:not(.empty) {
+  background: alpha(@tertiary, 0.8);
+}
+
 #workspaces button.active {
   background: @primary;
   min-width: 24px;
