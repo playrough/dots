@@ -17,9 +17,7 @@ window#waybar {
 }
 
 #waybar > box {
-  margin: 0px 0px 3px 0px;
   background-color: alpha(@background, 0.7);
-  box-shadow: 0 0 2 2 rgba(0, 0, 0, 0.6);
   transition-property: background-color;
   transition-duration: 0.5s;
 }
