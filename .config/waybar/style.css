@@ -17,9 +17,11 @@ window#waybar {
 }
 
 #waybar > box {
-  background-color: alpha(@background, 0.7);
+  background-color: alpha(@background, 0.6);
   transition-property: background-color;
   transition-duration: 0.5s;
+  margin: 10px 20px 0 20px;
+  border-radius: 15px;
 }
 
 /* ===================== MODULE CONTAINERS ===================== */

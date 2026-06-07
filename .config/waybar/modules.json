@@ -1,16 +1,18 @@
 {
   "custom/arch": {
     "format": "󰣇",
-    "tooltip": true,
+    "tooltip": false,
     "tooltip-format": "btw"
   },
   "hyprland/window": {
-    "max-length": 45
+    "max-length": 45,
+    "tooltip": false
   },
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
     "warp-on-scroll": false,
+    "tooltip": false,
     "persistent-workspaces": {
       "*": 5
     },
@@ -88,28 +90,31 @@
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "Disconnected ⚠",
-    "on-click": "sh ~/scripts/rofi-wifi-menu/rofi-wifi-menu.sh"
+    "on-click": "sh ~/scripts/rofi-wifi-menu/rofi-wifi-menu.sh",
+    "tooltip": false
   },
   "cpu": {
     "format": " {usage}%",
-    "tooltip": true
+    "tooltip": false
   },
   "memory": {
     "format": " {}%",
-    "tooltip": true
+    "tooltip": false
   },
   "temperature": {
     "interval": 10,
     "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
     "critical-threshold": 100,
     "format-critical": " {temperatureC}",
-    "format": " {temperatureC}°C"
+    "format": " {temperatureC}°C",
+    "tooltip": false
   },
   "hyprland/language": {
     "format": "  {}",
     "format-en": "EN"
   },
   "battery": {
+    "tooltip": false,
     "states": {
       "warning": 30,
       "critical": 15
@@ -128,11 +133,12 @@
     ]
   },
   "battery#bat2": {
+    "tooltip": false,
     "bat": "BAT2"
   },
   "clock": {
-    "format": "{:%H:%M | %e %B} ",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip": false,
+    "format": "{:%H:%M | %d %B} ",
     "format-alt": "{:%Y-%m-%d}"
   }
 }
