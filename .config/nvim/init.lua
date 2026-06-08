@@ -336,6 +336,7 @@ vim.pack.add({
 
 	-- Quality of Life
 	"https://github.com/echasnovski/mini.nvim",
+	"https://github.com/nvim-mini/mini.files",
 })
 
 -- ============================================================================
@@ -588,6 +589,15 @@ require("mini.pairs").setup({})
 require("mini.trailspace").setup({})
 require("mini.bufremove").setup({})
 require("mini.cursorword").setup({ delay = 1000 })
+require("mini.files").setup({})
+
+vim.keymap.set("n", "<leader>e", function()
+	local mf = require("mini.files")
+
+	if not mf.close() then
+		mf.open()
+	end
+end, { desc = "Toggle MiniFiles" })
 
 local hipatterns = require("mini.hipatterns")
 
