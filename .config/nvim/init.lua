@@ -592,11 +592,17 @@ require("mini.cursorword").setup({ delay = 1000 })
 require("mini.files").setup({})
 
 vim.keymap.set("n", "<leader>e", function()
-	local mf = require("mini.files")
+	local MiniFiles = require("mini.files")
 
-	if not mf.close() then
-		mf.open()
+	if MiniFiles.close() then
+		return
 	end
+
+	MiniFiles.open(vim.api.nvim_buf_get_name(0), false)
+
+	vim.defer_fn(function()
+		MiniFiles.reveal_cwd()
+	end, 30)
 end, { desc = "Toggle MiniFiles" })
 
 local hipatterns = require("mini.hipatterns")
