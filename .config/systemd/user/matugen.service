@@ -1,0 +1,12 @@
+[Unit]
+Description=Matugen Live CSS Server
+After=graphical-session.target
+
+[Service]
+WorkingDirectory=%h/.config/web
+ExecStart=/usr/bin/npm start
+Restart=always
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=default.target

@@ -71,3 +71,4 @@
 
 # ===== LOCAL STUFF =====
 .local/
+.config/web/node_modules/
