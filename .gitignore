@@ -40,6 +40,7 @@
 .config/xsettingsd/*
 .config/xfce4/*
 .config/rofi/images/
+.config/quickshell/
 
 **/*.wants/
 
