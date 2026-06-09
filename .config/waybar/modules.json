@@ -5,7 +5,13 @@
     "tooltip-format": "btw"
   },
   "hyprland/window": {
-    "max-length": 45,
+    "format": "{class}",
+    "rewrite": {
+      "^$": "Desktop"
+    },
+    "max-length": 15,
+    "min-length": 15,
+    "separate-outputs": true,
     "tooltip": false
   },
   "hyprland/workspaces": {
@@ -137,8 +143,29 @@
     "bat": "BAT2"
   },
   "clock": {
-    "tooltip": false,
-    "format": "{:%H:%M | %d %B} ",
-    "format-alt": "{:%Y-%m-%d}"
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%a, %d %b}",
+    "tooltip": false
+  },
+  "custom/mpris": {
+    "exec": "~/.config/waybar/scripts/mpris.sh",
+    "interval": 2,
+    "return-type": "json",
+    "max-length": 25,
+    "min-length": 25,
+    "on-click": "playerctl play-pause",
+    "tooltip": false
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "󰃞",
+      "󰃟",
+      "󰃠"
+    ],
+    "on-scroll-up": "brightnessctl -d amdgpu_bl1 -e4 -n2 set 5%+",
+    "on-scroll-down": "brightnessctl -d amdgpu_bl1 -e4 -n2 set 5%-",
+    "smooth-scrolling-threshold": 0.2,
+    "tooltip": false
   }
 }

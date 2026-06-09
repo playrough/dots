@@ -6,23 +6,21 @@
   // "margin-top": 10,
   // "margin-bottom": 0,
   "spacing": 4,
-  "modules-left": [
-    "custom/arch",
-    "hyprland/window",
-    "cava"
-  ],
   "modules-center": [
-    "hyprland/workspaces"
-  ],
-  "modules-right": [
-    "network",
+    // "custom/arch",
+    "hyprland/window",
+    "hyprland/workspaces",
+    "custom/mpris",
+    "cava",
+    "clock",
     "pulseaudio",
+    "backlight",
     "cpu",
     "memory",
     "temperature",
     "battery",
     "battery#bat2",
-    "clock"
+    "network",
   ],
   "include": [
     "~/.config/waybar/modules.json"
