@@ -40,7 +40,7 @@ alias nv='nvim'
 # Git
 # =========================================================
 
-alias gs='git status -sb'
+alias gs='git status'
 alias ga='git add'
 alias gc='git commit -m'
 alias gp='git push'
