@@ -10,7 +10,7 @@
       "^$": "desktop"
     },
     "max-length": 15,
-    "min-length": 15,
+    "min-length": 10,
     "separate-outputs": true,
     "tooltip": false
   },
@@ -91,7 +91,7 @@
     "on-click": "pavucontrol"
   },
   "network": {
-    "format-wifi": " {essid} ({signalStrength}%)",
+    "format-wifi": " {essid}",
     "format-ethernet": "{ipaddr}/{cidr} ",
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
@@ -151,7 +151,7 @@
     "exec": "~/.config/waybar/scripts/mpris.sh",
     "interval": 2,
     "return-type": "json",
-    "max-length": 25,
+    "max-length": 35,
     "min-length": 25,
     "on-click": "playerctl play-pause",
     "tooltip": false

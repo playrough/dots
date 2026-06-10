@@ -4,7 +4,7 @@ version_check = false
 [templates.waybar]
 input_path = './templates/waybar.css'
 output_path = '~/.config/waybar/colors.css'
-post_hook = 'pkill -SIGUSR2 waybar'
+post_hook = '~/.config/matugen/post-hook-scripts/reload-waybar.sh'
 
 [templates.swaync]
 input_path = './templates/swaync.css'
