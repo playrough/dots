@@ -152,7 +152,7 @@
     "interval": 2,
     "return-type": "json",
     "max-length": 35,
-    "min-length": 25,
+    "min-length": 35,
     "on-click": "playerctl play-pause",
     "tooltip": false
   },

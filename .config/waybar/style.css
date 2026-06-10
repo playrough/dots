@@ -12,15 +12,11 @@ window#waybar {
   font-size: 12px;
 }
 
-#waybar > box {
-  margin: 10px 350px 0 350px;
+.modules-center {
   padding: 6px;
   background: alpha(@background, 0.7);
   border-radius: 99px;
-}
-
-.modules-center {
-  margin: 0 2px;
+  margin: 0 4px;
 }
 
 #workspaces,
@@ -36,7 +32,6 @@ window#waybar {
 #battery,
 #network {
   background: alpha(@surface_container_high, 0.7);
-  /* border: 1px solid alpha(@outline_variant, 1); */
   margin: 0 1px;
   padding: 2px 8px;
   border-radius: 99px;
@@ -46,7 +41,6 @@ window#waybar {
   min-width: 50px;
 }
 
-/* #workspaces:hover, */
 #window:hover,
 #custom-mpris:hover,
 #cava:hover,

@@ -43,7 +43,7 @@ hl.on("hyprland.start", function()
 
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("fcitx5 -d")
-	hl.exec_cmd("batsignal -b")
+	hl.exec_cmd("$HOME/.config/hypr/scripts/battery-monitor.sh")
 end)
 
 -------------------------------
@@ -274,9 +274,9 @@ end)
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("fcitx5-remote -t"))
 hl.bind(mainMod .. " + DELETE", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("$HOME/.config/wlogout/logoutlaunch.sh"))
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("$HOME/.config/hypr/script/wall-select.sh"))
-hl.bind(secondMod .. " + W", hl.dsp.exec_cmd("$HOME/.config/hypr/script/change-color-scheme.sh"))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("$HOME/.config/hypr/script/refresh.sh"))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/wall-select.sh"))
+hl.bind(secondMod .. " + W", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/change-color-scheme.sh"))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/refresh.sh"))
 hl.bind(secondMod .. " + R", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
 
 hl.bind(mainMod .. " + O", hl.dsp.window.set_prop({ window = "active", prop = "opaque", value = "toggle" }))

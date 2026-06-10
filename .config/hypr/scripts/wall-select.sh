@@ -7,7 +7,7 @@ set -euo pipefail
 # =========================================================
 readonly WALL_DIR="$HOME/Downloads/wallpapers"
 readonly CACHE_DIR="$HOME/.cache/wallcache"
-readonly SCRIPTS_DIR="$HOME/.config/hypr/script"
+readonly SCRIPTS_DIR="$HOME/.config/hypr/scripts"
 readonly ROFI_THEME="$HOME/.config/rofi/applets/wallSelect.rasi"
 readonly ROFI_COLOR_PICKER_THEME="$HOME/.config/rofi/applets/colorPicker.rasi"
 readonly ROFI_IMAGES_DIR="$HOME/.config/rofi/images" # THÊM DÒNG NÀY
