@@ -7,7 +7,7 @@
   "hyprland/window": {
     "format": "{class}",
     "rewrite": {
-      "^$": "Desktop"
+      "^$": "desktop"
     },
     "max-length": 15,
     "min-length": 15,
@@ -41,7 +41,7 @@
     "framerate": 60,
     "autosens": 0,
     "sensitivity": 0.5,
-    "bars": 14,
+    "bars": 20,
     "lower_cutoff_freq": 50,
     "higher_cutoff_freq": 10000,
     "hide_on_silence": false,

@@ -75,9 +75,11 @@ hl.config({
 		border_size = 1,
 
 		col = {
-			active_border = colors.alpha.primary["30"],
-			inactive_border = "rgba(0,0,0,0)",
+			-- active_border = colors.alpha.primary["30"],
 			-- inactive_border = colors.alpha.primary["10"],
+
+			active_border = colors.outline_variant,
+			inactive_border = "rgba(0,0,0,0)",
 		},
 
 		-- Set to true to enable resizing windows by clicking and dragging on borders and gaps
@@ -90,7 +92,7 @@ hl.config({
 	},
 
 	decoration = {
-		rounding = 10,
+		rounding = 6,
 		rounding_power = 2,
 
 		active_opacity = 0.8,

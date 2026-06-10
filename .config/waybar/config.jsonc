@@ -9,9 +9,9 @@
   "modules-center": [
     // "custom/arch",
     "hyprland/window",
-    "hyprland/workspaces",
-    "custom/mpris",
     "cava",
+    "custom/mpris",
+    "hyprland/workspaces",
     "clock",
     "pulseaudio",
     "backlight",
