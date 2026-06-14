@@ -271,6 +271,19 @@ hl.bind(mainMod .. " + U", function()
 	end, { timeout = 500, type = "oneshot" })
 end)
 
+hl.bind(secondMod .. " + RETURN", function()
+	hl.dispatch(hl.dsp.window.float({
+		action = "toggle",
+	}))
+
+	hl.dispatch(hl.dsp.window.resize({
+		x = 960,
+		y = 540,
+	}))
+
+	hl.dispatch(hl.dsp.window.center())
+end)
+
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("fcitx5-remote -t"))
 hl.bind(mainMod .. " + DELETE", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("$HOME/.config/wlogout/logoutlaunch.sh"))

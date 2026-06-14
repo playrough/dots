@@ -10,7 +10,6 @@
       "^$": "desktop"
     },
     "max-length": 15,
-    "min-length": 10,
     "separate-outputs": true,
     "tooltip": false
   },
@@ -152,7 +151,6 @@
     "interval": 2,
     "return-type": "json",
     "max-length": 35,
-    "min-length": 35,
     "on-click": "playerctl play-pause",
     "tooltip": false
   },

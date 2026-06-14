@@ -31,14 +31,13 @@ window#waybar {
 #temperature,
 #battery,
 #network {
-  background: alpha(@surface_container_high, 0.7);
-  margin: 0 1px;
+  background: alpha(@surface_container_high, 0);
+  margin: 0 2px;
   padding: 2px 8px;
   border-radius: 99px;
   color: alpha(@on_surface, 0.8);
 
   transition: all 0.3s;
-  min-width: 50px;
 }
 
 #window:hover,
