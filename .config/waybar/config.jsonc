@@ -3,11 +3,15 @@
   "position": "top",
   "margin-top": 10,
   "spacing": 4,
-  "modules-center": [
+  "modules-left": [
     "hyprland/window",
     "cava",
     "custom/mpris",
+  ],
+  "modules-center": [
     "hyprland/workspaces",
+  ],
+  "modules-right": [
     "network",
     "pulseaudio",
     "backlight",

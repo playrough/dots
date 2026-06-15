@@ -12,11 +12,14 @@ window#waybar {
   font-size: 12px;
 }
 
-.modules-center {
+#waybar > box {
   padding: 6px;
   background: alpha(@background, 0.7);
   border-radius: 99px;
-  margin: 0 4px;
+  margin: 0 25px;
+}
+
+.modules-center {
 }
 
 #workspaces,
