@@ -18,9 +18,8 @@ hl.monitor({
 
 -- Set programs that you use
 local terminal = "kitty"
-local browser = "librewolf"
+local browser = "zen-browser"
 local music = "spicetify watch -s"
-local runner = "rofi -show run"
 
 -------------------
 ---- AUTOSTART ----
@@ -32,18 +31,14 @@ local runner = "rofi -show run"
 -- Or execute your favorite apps at launch like this:
 
 hl.on("hyprland.start", function()
-	hl.exec_cmd("systemctl --user start hyprpolkitagent")
+	-- hl.exec_cmd("systemctl --user start hyprpolkitagent")
 
 	hl.exec_cmd("udiskie -a -n")
 	hl.exec_cmd("blueman-applet")
-	hl.exec_cmd("swaync")
-	hl.exec_cmd("hypridle")
 
-	hl.exec_cmd("awww-daemon")
+	hl.exec_cmd("qs -c noctalia-shell")
 
-	hl.exec_cmd("waybar")
 	hl.exec_cmd("fcitx5 -d")
-	hl.exec_cmd("$HOME/.config/hypr/scripts/battery-monitor.sh")
 end)
 
 -------------------------------
@@ -72,7 +67,7 @@ hl.config({
 		gaps_in = 8,
 		gaps_out = 20,
 
-		border_size = 1,
+		border_size = 0,
 
 		col = {
 			-- active_border = colors.alpha.primary["30"],
@@ -222,7 +217,7 @@ hl.config({
 		repeat_rate = 25,
 		repeat_delay = 300,
 
-		follow_mouse = 0,
+		follow_mouse = 1,
 		sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
 
 		touchpad = {
@@ -251,13 +246,38 @@ hl.device({
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 local secondMod = "SUPER + SHIFT"
 
--- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
+local ipc = "qs -c noctalia-shell ipc call"
+
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(music))
 
-hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("$HOME/.config/rofi/launcher.sh"))
-hl.bind(secondMod .. " + D", hl.dsp.exec_cmd(runner))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(ipc .. " launcher toggle"))
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(ipc .. " controlCenter toggle"))
+hl.bind(mainMod .. " + COMMA", hl.dsp.exec_cmd(ipc .. " settings toggle"))
+
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(ipc .. " wallpaper toggle"))
+hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd(ipc .. " sessionMenu toggle"))
+hl.bind(mainMod .. " + DELETE", hl.dsp.exec_cmd(ipc .. " lockScreen lock"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(ipc .. " plugin openPanel clipper"))
+
+-- battery togglePanel
+-- ipc call launcher clipboard
+-- hl.bind(mainMod .. " + Super_L", hl.dsp.exec_cmd(ipc .. " launcher clipboard"))
+
+-- # Media keys
+-- bindel = , XF86AudioRaiseVolume, exec, $ipc volume increase
+-- bindel = , XF86AudioLowerVolume, exec, $ipc volume decrease
+-- bindl = , XF86AudioMute, exec, $ipc volume muteOutput
+-- bindel = , XF86MonBrightnessUp, exec, $ipc brightness increase
+-- bindel = , XF86MonBrightnessDown, exec, $ipc brightness decrease
+--
+
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. " volume increase"), { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. " volume decrease"), { locked = true, repeating = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. " volume muteOutput"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. " brightness increase"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. " brightness decrease"), { locked = true, repeating = true })
 
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(
@@ -285,17 +305,17 @@ hl.bind(secondMod .. " + RETURN", function()
 end)
 
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("fcitx5-remote -t"))
-hl.bind(mainMod .. " + DELETE", hl.dsp.exec_cmd("hyprlock"))
-hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("$HOME/.config/wlogout/logoutlaunch.sh"))
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/wall-select.sh"))
-hl.bind(secondMod .. " + W", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/change-color-scheme.sh"))
+-- hl.bind(mainMod .. " + DELETE", hl.dsp.exec_cmd("hyprlock"))
+-- hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("$HOME/.config/wlogout/logoutlaunch.sh"))
+-- hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/wall-select.sh"))
+-- hl.bind(secondMod .. " + W", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/change-color-scheme.sh"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/refresh.sh"))
 hl.bind(secondMod .. " + R", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
 
 hl.bind(mainMod .. " + O", hl.dsp.window.set_prop({ window = "active", prop = "opaque", value = "toggle" }))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 
-hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
+-- hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + G", hl.dsp.layout("togglesplit"))
 
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
@@ -344,28 +364,28 @@ hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Laptop multimedia keys for volume and LCD brightness
-hl.bind(
-	"XF86AudioRaiseVolume",
-	hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
-	{ locked = true, repeating = true }
-)
-hl.bind(
-	"XF86AudioLowerVolume",
-	hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
-	{ locked = true, repeating = true }
-)
-hl.bind(
-	"XF86AudioMute",
-	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
-	{ locked = true, repeating = true }
-)
+-- hl.bind(
+-- 	"XF86AudioRaiseVolume",
+-- 	hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
+-- 	{ locked = true, repeating = true }
+-- )
+-- hl.bind(
+-- 	"XF86AudioLowerVolume",
+-- 	hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
+-- 	{ locked = true, repeating = true }
+-- )
+-- hl.bind(
+-- 	"XF86AudioMute",
+-- 	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
+-- 	{ locked = true, repeating = true }
+-- )
 hl.bind(
 	"XF86AudioMicMute",
 	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
 	{ locked = true, repeating = true }
 )
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
+-- hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
+-- hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
 
 -- Requires playerctl
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
@@ -461,3 +481,41 @@ hl.window_rule({
 	move = "20 monitor_h-120",
 	float = true,
 })
+
+hl.layer_rule({
+	name = "noctalia",
+	match = { namespace = "noctalia-background-.*$" },
+	ignore_alpha = 0.5,
+	blur = true,
+	blur_popups = true,
+})
+
+hl.layer_rule({
+	name = "noctalia-notifications",
+	match = { namespace = "noctalia-notifications-.*$" },
+	ignore_alpha = 0.5,
+	blur = true,
+	blur_popups = true,
+})
+
+hl.layer_rule({
+	name = "noctalia-osd",
+	match = { namespace = "noctalia-osd-.*$" },
+	ignore_alpha = 0.5,
+	blur = true,
+	blur_popups = true,
+})
+
+hl.layer_rule({
+	name = "noctalia-toast",
+	match = { namespace = "noctalia-toast-.*$" },
+	ignore_alpha = 0.5,
+	blur = true,
+	blur_popups = true,
+})
+
+hl.workspace_rule({ workspace = "1", persistent = true })
+hl.workspace_rule({ workspace = "2", persistent = true })
+hl.workspace_rule({ workspace = "3", persistent = true })
+hl.workspace_rule({ workspace = "4", persistent = true })
+hl.workspace_rule({ workspace = "5", persistent = true })

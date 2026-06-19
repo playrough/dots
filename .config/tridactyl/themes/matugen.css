@@ -144,7 +144,7 @@
   left: 10% !important;
   z-index: 2147483647 !important;
   width: 80% !important;
-  filter: drop-shadow(0px 0px 24px rgba(0, 0, 0, 0.55)) !important;
+  filter: none !important;
   color-scheme: only light; /* Prevent Firefox from adding a white background on dark-mode sites */
 }
 
@@ -173,3 +173,5 @@
 .TridactylSetting span {
   background: var(--tri-primary_container);
 }
+
+:root #cmdline_iframe

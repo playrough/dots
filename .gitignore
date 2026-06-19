@@ -72,3 +72,7 @@
 # ===== LOCAL STUFF =====
 .local/
 .config/web/node_modules/
+
+.config/evolution/
+.config/noctalia/plugins/
+.config/zen/
